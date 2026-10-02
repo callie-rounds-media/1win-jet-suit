@@ -493,7 +493,7 @@ gsap.timeline({scrollTrigger:{trigger:'#tagline',start:'top top',end:'+=90%',scr
 /* gravity:/* gravity: video revealed through an expanding iris while pinned */
 gsap.fromTo('#gravity .frame',{clipPath:'circle(9% at 50% 50%)'},{clipPath:'circle(72% at 50% 50%)',ease:'power1.inOut',scrollTrigger:{trigger:'#gravity',start:'top 92%',end:'top top',scrub:1}});
 gsap.timeline({scrollTrigger:{trigger:'#gravity',start:'top top',end:'+=70%',scrub:1,pin:true,anticipatePin:1}})
-  .to('#gravity .frame',{clipPath:'circle(120% at 50% 50%)',ease:'none',duration:.6},0)
+  .fromTo('#gravity .frame',{clipPath:'circle(72% at 50% 50%)'},{clipPath:'circle(120% at 50% 50%)',ease:'none',duration:.6,immediateRender:false},0)
   .from('#gravity h2',{opacity:0,y:60,duration:.4},.1);
 
 }
