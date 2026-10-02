@@ -247,6 +247,10 @@
   #mus.on #musbox{display:block}
   #musbox iframe{width:100%;height:100%}
   @media (max-width:640px){#mus{right:12px;bottom:12px}#musbox{width:240px}}
+  @media (max-width:640px){#close .cutlayer{display:none}}
+  .slide .inner{z-index:6}
+  #close .cutlayer{z-index:5;pointer-events:none}
+  #close .inner{z-index:6}
 </style>
 </head>
 <body>
@@ -371,7 +375,7 @@
     <div>
       <div class="eyebrow r">What 1win gets</div>
       <div class="guar r d1">
-        <div class="big"><span data-count="500" data-suffix="M">500M</span></div>
+        <div class="big"><span data-count="300" data-suffix="M">300M</span></div>
         <p>Guaranteed views within 12 months.</p>
         <p class="fine">If I fall short, I post one dedicated 1win video every month for the following 12 months, at no cost.</p>
       </div>
@@ -387,6 +391,7 @@
 <!-- 09 -->
 <section class="slide" id="close">
   <div class="bg"><img src="assets/silhouette.jpg" alt="Concept render of Callie in a jet suit at dawn" onerror="this.closest('.bg').style.background='linear-gradient(180deg,#fff,#88C1ED)';this.remove()"></div>
+  <div class="bg cutlayer"><img src="assets/silhouette-cut.png" alt=""></div>
   <div class="shade"></div>
   <div class="inner">
     <div class="eyebrow r">Built around you</div>
