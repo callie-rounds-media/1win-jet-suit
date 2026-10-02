@@ -519,8 +519,9 @@ gsap.timeline({scrollTrigger:{trigger:'#gravity',start:'top top',end:'+=70%',scr
     start=document.getElementById('numbers').offsetTop;
     let px=W*.04,d='M '+px+' '+start;
     slides.forEach((s,i)=>{
-      const y=s.offsetTop+s.offsetHeight*.55;
+      let y=s.offsetTop+s.offsetHeight*.55;
       let x=(i%2?W*.96:W*.04);
+      if(s.id==='close'){x=W*.40;y=s.offsetTop+s.offsetHeight*.34}
       const cx=(px+x)/2;
       d+=' C '+cx+' '+(y-s.offsetHeight*.55)+', '+x+' '+(y-s.offsetHeight*.3)+', '+x+' '+y;
       px=x;
