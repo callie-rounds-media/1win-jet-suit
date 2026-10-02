@@ -289,7 +289,7 @@
   </div>
   <div class="inner">
     <h2 class="fx">This is <span class="grad">Gravity.</span></h2>
-    <p class="glinks fx" style="margin-top:16px"><a href="https://www.instagram.com/gravityflightclub/" target="_blank" rel="noopener">@gravityflightclub</a><a href="https://gravity.co" target="_blank" rel="noopener">gravity.co</a></p>
+    <p class="glinks fx" style="margin-top:16px"><a href="https://www.instagram.com/takeongravity/" target="_blank" rel="noopener">@takeongravity</a><a href="https://gravity.co" target="_blank" rel="noopener">gravity.co</a></p>
   </div>
 </section>
 
@@ -540,6 +540,14 @@ gsap.timeline({scrollTrigger:{trigger:'#gravity',start:'top top',end:'+=70%',scr
     else dot.style.opacity=0;
     requestAnimationFrame(go);
   })();
+})();
+</script>
+<script>
+(function(){
+  const v=document.querySelector('#gravity video');if(!v)return;
+  function kick(){if(v.paused){const r=v.play();if(r&&r.catch)r.catch(function(){})}}
+  ['touchstart','touchend','scroll','click'].forEach(function(e){addEventListener(e,kick,{passive:true})});
+  new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)kick()})},{threshold:.1}).observe(v);
 })();
 </script>
 </body>
