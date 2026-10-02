@@ -289,8 +289,6 @@
   </div>
   <div class="inner">
     <h2 class="fx">This is <span class="grad">Gravity.</span></h2>
-    <p class="small fx" style="margin-top:18px;max-width:340px">The company that builds real, flying jet suits, the kind you’ve only ever seen in movies.</p>
-    <p class="small fx" style="margin-top:10px;max-width:340px">And none of it is AI. This is real footage of real pilots, flying on jet fuel and years of training, the closest thing to human flight there is.</p>
     <p class="glinks fx" style="margin-top:16px"><a href="https://www.instagram.com/gravityindustries/" target="_blank" rel="noopener">@gravityindustries</a><a href="https://gravity.co" target="_blank" rel="noopener">gravity.co</a></p>
   </div>
 </section>
@@ -511,7 +509,6 @@ gsap.fromTo('#gravity .frame',{clipPath:'circle(9% at 50% 50%)'},{clipPath:'circ
 gsap.timeline({scrollTrigger:{trigger:'#gravity',start:'top top',end:'+=70%',scrub:1,pin:true,anticipatePin:1}})
   .fromTo('#gravity .frame',{clipPath:'circle(72% at 50% 50%)'},{clipPath:'circle(120% at 50% 50%)',ease:'none',duration:.6,immediateRender:false},0)
   .from('#gravity h2',{opacity:0,y:60,duration:.4},.1)
-  .from('#gravity .small',{opacity:0,y:40,duration:.4},.18)
   .from('#gravity .glinks',{opacity:0,y:30,duration:.4},.25);
 
 }
