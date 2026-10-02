@@ -286,6 +286,7 @@
   </div>
   <div class="inner">
     <h2 class="fx">This is <span class="grad">Gravity.</span></h2>
+    <p class="small fx" style="margin-top:18px;max-width:340px">The company that builds real, flying jet suits, the kind you’ve only ever seen in movies.</p>
   </div>
 </section>
 
@@ -504,7 +505,8 @@ gsap.timeline({scrollTrigger:{trigger:'#tagline',start:'top top',end:'+=90%',scr
 gsap.fromTo('#gravity .frame',{clipPath:'circle(9% at 50% 50%)'},{clipPath:'circle(72% at 50% 50%)',ease:'power1.inOut',scrollTrigger:{trigger:'#gravity',start:'top 92%',end:'top top',scrub:1}});
 gsap.timeline({scrollTrigger:{trigger:'#gravity',start:'top top',end:'+=70%',scrub:1,pin:true,anticipatePin:1}})
   .fromTo('#gravity .frame',{clipPath:'circle(72% at 50% 50%)'},{clipPath:'circle(120% at 50% 50%)',ease:'none',duration:.6,immediateRender:false},0)
-  .from('#gravity h2',{opacity:0,y:60,duration:.4},.1);
+  .from('#gravity h2',{opacity:0,y:60,duration:.4},.1)
+  .from('#gravity .small',{opacity:0,y:40,duration:.4},.18);
 
 }
 /* flight path from Years in the making to the end */
