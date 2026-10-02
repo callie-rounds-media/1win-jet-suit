@@ -515,9 +515,9 @@ gsap.timeline({scrollTrigger:{trigger:'#gravity',start:'top top',end:'+=70%',scr
     const all=[...document.querySelectorAll('.slide')];
     const slides=all.slice(all.indexOf(document.getElementById('numbers')));
     start=document.getElementById('numbers').offsetTop;
-    let d='M '+(W*.12)+' '+start;
+    let d='M '+(W*.04)+' '+start;
     slides.forEach((s,i)=>{
-      const y=s.offsetTop+s.offsetHeight*.55,x=(i%2?W*.88:W*.12);
+      const y=s.offsetTop+s.offsetHeight*.55,x=(i%2?W*.96:W*.04);
       d+=' C '+(i%2?W*.3:W*.7)+' '+(y-s.offsetHeight*.55)+', '+x+' '+(y-s.offsetHeight*.3)+', '+x+' '+y;
     });
     pp.setAttribute('d',d);L=pp.getTotalLength();
