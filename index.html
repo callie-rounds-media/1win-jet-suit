@@ -241,7 +241,7 @@
   #path path{fill:none;stroke:url(#pg);stroke-width:2.5;filter:drop-shadow(0 0 6px rgba(136,193,237,.9))}
   #pilot{position:absolute;z-index:5;width:14px;height:14px;margin:-7px;border-radius:50%;background:#fff;box-shadow:0 0 12px #fff,0 0 34px var(--ice),0 0 70px var(--ice);pointer-events:none;opacity:0}
   @media (max-width:640px){#hero .inner{padding:0 16px}#gravity .inner{padding:0 16px}}
-  @media (max-width:640px){#close .cutlayer{top:0;left:0;right:0;bottom:auto;height:440px;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}}
+  @media (max-width:640px){#close .cutlayer{position:absolute;top:0;left:0;right:0;bottom:auto;height:440px;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}}
   .slide .inner{z-index:6}
   #close .cutlayer{z-index:5;pointer-events:none}
   #close .inner{z-index:6}
@@ -521,7 +521,7 @@ gsap.timeline({scrollTrigger:{trigger:'#gravity',start:'top top',end:'+=70%',scr
     slides.forEach((s,i)=>{
       let y=s.offsetTop+s.offsetHeight*.55;
       let x=(i%2?W*.96:W*.04);
-      if(s.id==='close'){x=W*.40;y=s.offsetTop+s.offsetHeight*.34}
+      if(s.id==='close'){if(W<=640){x=W*.60;y=s.offsetTop+220}else{x=W*.40;y=s.offsetTop+s.offsetHeight*.34}}
       const cx=(px+x)/2;
       d+=' C '+cx+' '+(y-s.offsetHeight*.55)+', '+x+' '+(y-s.offsetHeight*.3)+', '+x+' '+y;
       px=x;
