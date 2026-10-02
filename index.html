@@ -240,13 +240,6 @@
   #path path{fill:none;stroke:url(#pg);stroke-width:2.5;filter:drop-shadow(0 0 6px rgba(136,193,237,.9))}
   #pilot{position:absolute;z-index:5;width:14px;height:14px;margin:-7px;border-radius:50%;background:#fff;box-shadow:0 0 12px #fff,0 0 34px var(--ice),0 0 70px var(--ice);pointer-events:none;opacity:0}
   @media (max-width:640px){#hero .inner{padding:0 16px}#gravity .inner{padding:0 16px}}
-  #mus{position:fixed;right:20px;bottom:20px;z-index:55;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-  #musbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(136,193,237,.5);border-radius:99px;padding:10px 16px;background:rgba(6,12,22,.9);color:var(--ice);font:inherit;font-size:13px;letter-spacing:.02em;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-  #musbtn:hover{background:rgba(136,193,237,.14)}
-  #musbox{width:300px;aspect-ratio:16/9;border-radius:14px;overflow:hidden;display:none;box-shadow:0 10px 40px rgba(0,0,0,.6);border:1px solid var(--faint)}
-  #mus.on #musbox{display:block}
-  #musbox iframe{width:100%;height:100%}
-  @media (max-width:640px){#mus{right:12px;bottom:12px}#musbox{width:240px}}
   @media (max-width:640px){#close .cutlayer{display:none}}
   .slide .inner{z-index:6}
   #close .cutlayer{z-index:5;pointer-events:none}
@@ -259,7 +252,7 @@
 
 <canvas id="wind"></canvas>
 <div class="progress" id="progress"></div>
-<div class="bar"><span><b>1win</b> × Callie Rounds</span><span>Jet Suit</span></div>
+<div class="bar"><span><b>1win</b> × Callie Rounds</span></div>
 
 <!-- 01 -->
 <section class="slide" id="hero">
@@ -542,18 +535,6 @@ gsap.timeline({scrollTrigger:{trigger:'#gravity',start:'top top',end:'+=70%',scr
     requestAnimationFrame(go);
   })();
 })();
-</script>
-<div id="mus"><div id="musbox"><div id="ytfly"></div></div><button id="musbtn">&#9835; Play &ldquo;Fly&rdquo;</button></div>
-<script>
-let ytp,musReady=false;
-const musTag=document.createElement('script');musTag.src='https://www.youtube.com/iframe_api';document.head.appendChild(musTag);
-window.onYouTubeIframeAPIReady=function(){ytp=new YT.Player('ytfly',{videoId:'5LRwYKpV-6A',playerVars:{rel:0,playsinline:1},events:{onReady:function(){musReady=true}}})};
-document.getElementById('musbtn').addEventListener('click',function(){
-  if(!musReady)return;
-  const on=document.getElementById('mus').classList.toggle('on');
-  if(on){ytp.playVideo();this.innerHTML='Pause &ldquo;Fly&rdquo;'}
-  else{ytp.pauseVideo();this.innerHTML='&#9835; Play &ldquo;Fly&rdquo;'}
-});
 </script>
 </body>
 </html>
