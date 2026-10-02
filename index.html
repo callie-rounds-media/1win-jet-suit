@@ -526,7 +526,6 @@ gsap.timeline({scrollTrigger:{trigger:'#gravity',start:'top top',end:'+=70%',scr
     slides.forEach((s,i)=>{
       const y=s.offsetTop+s.offsetHeight*.55;
       let x=(i%2?W*.96:W*.04);
-      if(s.id==='gets')x=W*.04;
       const cx=(px+x)/2;
       d+=' C '+cx+' '+(y-s.offsetHeight*.55)+', '+x+' '+(y-s.offsetHeight*.3)+', '+x+' '+y;
       px=x;
